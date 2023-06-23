@@ -13,9 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dbl-angular-qr-code",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "baseHref": "/dbl-qrcode",
             "polyfills": [
               "zone.js"
             ],
