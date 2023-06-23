@@ -1,0 +1,46 @@
+<div class="container-qrcode-all">
+  <div class="container-qrcode-title">
+    <h1>Welcome USER !</h1>
+  </div>
+  <div class="container-input-qrcode">
+    <form [formGroup]="dblForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="inputValue1">Ton code :</label>
+        <input type="text" formControlName="inputValue1" />
+      </div>
+      <div>
+        <label for="inputs">Code ami :</label>
+        <input type="text" formControlName="inputValue2" />
+        <input type="text" formControlName="inputValue3" />
+        <input type="text" formControlName="inputValue4" />
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  <div *ngIf="newValue1" class="container-qrcode-image">
+    <div class="qrcode-container">
+      <qrcode
+        [qrdata]="this.newValue1"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+      <b>Code 1</b>
+    </div>
+    <div class="qrcode-container">
+      <qrcode
+        [qrdata]="this.newValue2"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+      <b>Code 2</b>
+    </div>
+    <div class="qrcode-container">
+      <qrcode
+        [qrdata]="this.newValue3"
+        [width]="256"
+        [errorCorrectionLevel]="'M'"
+      ></qrcode>
+      <b>Code 3</b>
+    </div>
+  </div>
+</div>
